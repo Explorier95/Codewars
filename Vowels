@@ -1,0 +1,34 @@
+public class Vowels {
+
+/*
+*Takes String to char array, the switch uses the array thanks to the little loop.
+*/
+
+	public static int getCount(String str) {
+		char[] array = str.toCharArray();
+    int solution = 0;
+    
+		for (int i = 0; i < array.length; i++) {
+			switch(array[i]) {
+			case 'a':
+				solution +=1;
+				break;
+			case 'e':
+				solution +=1;
+				break;
+			case 'i':
+				solution +=1;
+				break;
+			case 'o':
+				solution +=1;
+				break;
+			case 'u':
+				solution +=1;
+				break;
+			}
+
+		}
+		return solution;
+	}
+
+}
