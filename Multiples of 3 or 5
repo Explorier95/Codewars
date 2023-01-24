@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+
+/**
+*@author Fabian Tappedorf
+*Simple program which takes an Array to save the multiples 3 5 of the passed number.
+*before it is added to the list it will be checked if the number already exists inside the array.
+*/
+
+public class Solution {
+  
+  public static ArrayList<Integer> array = new ArrayList<>();
+
+  public static int solution(int number) {
+    int solution = 0;
+    
+    for(int i = 0 ; i < number; i++){
+      if(number == 0 || number < 0){
+        solution = 0;
+      }
+      if(3 * i < number){
+        if(!(array.contains(3*i))){
+          array.add(3*i);
+        }
+      }
+      if(5 * i < number ){
+        if(!(array.contains(5*i))){
+          array.add(5*i);
+        }
+       
+      }
+        
+    }
+    for(int x = 0; x < array.size(); x++){
+        solution = solution + array.get(x);
+      }
+    return solution;
+  }
+}
