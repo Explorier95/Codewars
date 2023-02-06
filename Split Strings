@@ -1,0 +1,48 @@
+//1# Check if the length of String is odd or not
+//2# Get two counter for each case
+//3# Start at index 0 and add charAt(+2) and charAt(+3) to Array
+//in odd funcion case, check if it's not out of bounds
+
+public class StringSplit {
+  
+		public static String[] solution(String s) {
+
+		  if (s.length() % 2 == 0) {
+
+			  String[] stringArray = new String[s.length() / 2];
+			  int counter = 1;
+			  int hCounter = 0;
+
+			  for (int i = 0; i < s.length(); i = i + 2) {
+
+				  char helperChar = s.charAt(i);
+				  stringArray[hCounter] = helperChar + "" + s.charAt(counter);
+				  counter = counter + 2;
+				  hCounter++;
+
+			  }
+
+			  return stringArray;
+        
+		} else {
+
+			  String[] stringArray = new String[s.length() / 2 + s.length() % 2];
+			  int counter = 1;
+			  int hCounter = 0;
+			  System.err.println("Der String hat eine ungerade Anzahl an Characters");
+
+			  for (int x = 0; x < s.length(); x = x + 2) {
+				  if (x == s.length()-1) {
+					  char helperChar = s.charAt(x);
+					  stringArray[hCounter] = helperChar + "_";
+				} else {
+					  char helperChar = s.charAt(x);
+					  stringArray[hCounter] = helperChar + "" + s.charAt(counter);
+					  counter = counter + 2;
+					  hCounter++;
+				}
+			}
+			return stringArray;
+		}
+	}
+ }
