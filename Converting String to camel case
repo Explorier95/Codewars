@@ -1,0 +1,24 @@
+import java.lang.StringBuilder;
+class Solution{
+  
+  //Converting string to camel case
+
+	static String toCamelCase(String s) {
+    StringBuilder builder = new StringBuilder();
+		builder.append(s);
+    
+		for (int i = 0; i < builder.length()-1; i++) {
+
+			if (builder.charAt(i) == '-' || builder.charAt(i) == '_') {
+				builder.deleteCharAt(i);
+
+				char hilfsChar = Character.toUpperCase(builder.charAt(i));
+				builder.replace(i,i,Character.toString(hilfsChar));
+				builder.deleteCharAt(i+1);
+			}
+			
+		}
+    
+		return builder.toString();
+	}
+  }
